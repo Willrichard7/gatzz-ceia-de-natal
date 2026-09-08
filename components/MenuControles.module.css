@@ -1,0 +1,66 @@
+.controles {
+  display: flex;
+  align-items: center;
+  gap: var(--e-8);
+  margin-top: var(--e-8);
+}
+
+.trilha {
+  flex: 1;
+  height: 2px;
+  background: rgb(255 255 255 / 14%);
+  overflow: hidden;
+}
+
+.preenchimento {
+  height: 100%;
+  background: rgb(255 255 255 / 55%);
+  transform-origin: left center;
+  /* scaleX em vez de width: anima na GPU e não recalcula layout a cada
+     evento de scroll. */
+  transition: transform 0.12s linear;
+}
+
+.setas {
+  display: none;
+  gap: var(--e-3);
+  flex-shrink: 0;
+}
+
+/* No toque o dedo resolve; setas seriam só ruído. */
+@media (min-width: 62rem) and (hover: hover) {
+  .setas {
+    display: flex;
+  }
+}
+
+.seta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  color: var(--branco);
+  border: 1px solid var(--separador);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.seta:hover:not(:disabled) {
+  background: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 40%);
+}
+
+.seta:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preenchimento {
+    transition: none;
+  }
+}

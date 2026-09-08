@@ -1,0 +1,44 @@
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--e-8);
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+/* Centralizado: o losango sobe para cima do título, em vez de ficar
+   à esquerda dele. */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-2);
+  text-align: center;
+}
+
+/* Losango dourado — eco do motivo déco, sem custo de ícone. */
+.marca {
+  width: 9px;
+  height: 9px;
+  background: var(--ouro-gradiente);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.titulo {
+  font-size: var(--t-h3);
+  color: var(--branco);
+}
+
+.texto {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  max-width: 52ch;
+}
+
+.acao {
+  margin-top: var(--e-12);
+  text-align: center;
+}

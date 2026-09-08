@@ -1,0 +1,139 @@
+/* A cor dos recortes precisa acompanhar o fundo da seção que hospeda
+   o bilhete. Quem usa o componente sobrescreve esta variável. */
+.bilhete {
+  --recorte: var(--bilhete-fundo-externo, var(--vinho));
+
+  position: relative;
+  width: min(100%, 24rem);
+  background: var(--creme);
+  color: var(--vinho);
+  border-radius: var(--raio);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 35%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.cabecalho {
+  background: var(--vinho);
+  color: var(--ouro-claro); /* 7,9:1 */
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: var(--e-3) var(--e-4);
+}
+
+.casa {
+  white-space: nowrap;
+}
+
+.corpo {
+  padding: var(--e-6) var(--e-4) var(--e-4);
+}
+
+.de {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--vinho); /* 10:1 sobre o creme */
+  margin-bottom: var(--e-2);
+}
+
+.por {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  line-height: 1;
+}
+
+.cifrao {
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--ouro-escuro);
+}
+
+/* Texto grande: 3,5:1 sobre o creme satisfaz AA para large text. */
+.numero {
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: clamp(4rem, 14vw, 5.5rem);
+  font-weight: 600;
+  color: var(--ouro-escuro);
+  letter-spacing: -0.02em;
+}
+
+.unidade {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--vinho);
+}
+
+.parcela {
+  margin-top: var(--e-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vinho);
+}
+
+/* O picote: linha tracejada com os dois recortes laterais. */
+.picote {
+  position: relative;
+  height: 1px;
+  margin: var(--e-2) var(--e-6);
+  border-top: 1px dashed rgb(118 19 22 / 35%);
+}
+
+.picote::before,
+.picote::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--recorte);
+  transform: translateY(-50%);
+}
+
+.picote::before {
+  left: calc(var(--e-6) * -1 - 10px);
+}
+
+.picote::after {
+  right: calc(var(--e-6) * -1 - 10px);
+}
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  /* stretch para a fita do lote poder ir de borda a borda do bilhete. */
+  align-items: stretch;
+  gap: var(--e-3);
+  padding: var(--e-3) 0 var(--e-6);
+  font-size: 0.75rem;
+  color: var(--vinho);
+}
+
+/* Fita do lote: atravessa o bilhete inteiro, como um carimbo. */
+.loteTag {
+  display: block;
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--branco); /* 7,9:1 sobre o verde */
+  background: var(--verde);
+  padding: var(--e-3) var(--e-4);
+  /* O tracking sobra depois da última letra e desloca o texto para a
+     esquerda; o padding extra devolve o eixo óptico ao centro. */
+  text-indent: 0.24em;
+}
+
+.validade {
+  padding-inline: var(--e-4);
+}

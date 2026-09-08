@@ -1,0 +1,72 @@
+.secao {
+  /* Degradê sobre o creme pedido, com uma descida quente no fim —
+     encosta no champanhe do próprio banner. */
+  background: linear-gradient(
+    180deg,
+    #faf6f0 0%,
+    #f3ece2 52%,
+    #e8dcca 100%
+  );
+  padding-block: var(--e-secao);
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.titulo {
+  font-size: var(--t-h2);
+  color: var(--vinho); /* 9,6:1 sobre o creme */
+  max-width: 20ch;
+}
+
+.card {
+  width: 100%;
+  overflow: hidden;
+  /* Sobre fundo claro, a borda precisa ser escura para existir. */
+  border: 1px solid rgb(74 47 44 / 12%);
+  box-shadow: 0 18px 44px rgb(74 47 44 / 14%);
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: var(--e-4) clamp(2rem, 5vw, 3.25rem);
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  font-size: var(--t-legenda);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  border-radius: 2px;
+  /* Secundário de propósito: vazado, não sólido. A ação primária da página
+     é o botão dourado, e este não pode competir com ela. */
+  background: transparent;
+  color: var(--vinho); /* 9,6:1 sobre o creme */
+  border: 1px solid rgb(118 19 22 / 45%);
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.botao:hover {
+  background: rgb(118 19 22 / 8%);
+  border-color: var(--vinho);
+}
+
+.botao[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

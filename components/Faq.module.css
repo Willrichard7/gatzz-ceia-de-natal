@@ -1,0 +1,72 @@
+/* <details>/<summary> nativo: acordeão acessível e navegável por teclado,
+   com zero JavaScript. */
+.lista {
+  max-width: 52rem;
+  display: grid;
+  gap: 0;
+}
+
+.item {
+  border-top: 1px solid var(--separador);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--separador);
+}
+
+.pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-6);
+  /* Alvo de toque generoso na linha inteira. */
+  min-height: 56px;
+  padding-block: var(--e-4);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: var(--branco);
+}
+
+.pergunta::-webkit-details-marker {
+  display: none;
+}
+
+.pergunta:hover {
+  color: var(--ouro-claro);
+}
+
+/* Sinal de + que vira − quando aberto. */
+.sinal {
+  position: relative;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.sinal::before,
+.sinal::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 1px;
+  background: var(--ouro-claro);
+  transition: transform 0.2s ease;
+}
+
+.sinal::after {
+  transform: rotate(90deg);
+}
+
+.item[open] .sinal::after {
+  transform: rotate(0deg);
+}
+
+.resposta {
+  padding-bottom: var(--e-6);
+  padding-right: var(--e-8);
+  max-width: 60ch;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}

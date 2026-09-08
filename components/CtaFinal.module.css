@@ -1,0 +1,54 @@
+.final {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(5rem, 12vw, 9rem);
+  background: radial-gradient(
+      ellipse 80% 70% at 50% 50%,
+      #a01a22 0%,
+      var(--vinho) 55%,
+      #4a0c0f 100%
+    );
+  text-align: center;
+}
+
+.grao {
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-6);
+}
+
+.marca {
+  width: min(100%, 22rem);
+  height: auto;
+  color: var(--ouro-claro);
+  opacity: 0.9;
+}
+
+.titulo {
+  font-size: var(--t-h2);
+  color: var(--branco);
+  max-width: 18ch;
+}
+
+.texto {
+  max-width: 44ch;
+  color: var(--texto-suave);
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-4);
+  margin-top: var(--e-2);
+}

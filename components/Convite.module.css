@@ -1,0 +1,96 @@
+.coluna {
+  --bilhete-fundo-externo: var(--vermelho);
+
+  display: flex;
+  flex-direction: column;
+  /* stretch para o relógio e o botão herdarem a largura do bilhete. */
+  align-items: stretch;
+  gap: var(--e-6);
+  width: min(100%, 24rem);
+  margin-inline: auto;
+  text-align: left;
+}
+
+.cartao {
+  position: relative;
+}
+
+/* O bilhete tem largura própria; aqui ele preenche a coluna. */
+.cartao > :first-child {
+  width: 100%;
+}
+
+/* Badge do parcelamento: selo colado no canto do bilhete. */
+/* Fora do bilhete, na altura do preço. Qualquer sobreposição aqui cobre
+   texto que importa: encostado no topo cobria "GATZZ Fondue & Show", e
+   parcialmente sobreposto cobria "POR PESSOA". */
+.badge {
+  position: absolute;
+  top: 3.5rem;
+  right: -6.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: var(--ouro-claro);
+  color: var(--vinho); /* 7,9:1 sobre o dourado */
+  text-align: center;
+  transform: rotate(-8deg);
+  box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
+}
+
+.badgeTopo,
+.badgeBase {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.badgeValor {
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badgeBase {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+/* Em tela estreita a coluna encosta nas bordas: o selo recolhe para dentro
+   do bilhete, senão empurraria a página para o lado. */
+/* Sem espaço lateral em tela estreita, o selo volta para dentro — no canto
+   superior, onde só encobre a cauda do cabeçalho, e não o preço. */
+@media (max-width: 48rem) {
+  .badge {
+    top: -1.25rem;
+    right: -0.75rem;
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .badgeValor {
+    font-size: 1.85rem;
+  }
+
+  .badgeTopo,
+  .badgeBase {
+    font-size: 0.55rem;
+  }
+}
+
+/* O botão é inline-flex por padrão; aqui ele ocupa a coluna inteira. */
+.acao {
+  display: flex;
+}
+
+.acao > * {
+  flex: 1;
+}

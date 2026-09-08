@@ -1,0 +1,51 @@
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-3);
+  /* Alvo de toque confortável: acima dos 44px mínimos. */
+  min-height: 56px;
+  padding: var(--e-4) clamp(1.75rem, 4vw, 2.75rem);
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  font-size: var(--t-legenda);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.primario {
+  background: var(--ouro-claro);
+  color: var(--vinho); /* 7,9:1 sobre o dourado claro */
+  box-shadow: 0 2px 18px rgb(235 214 164 / 22%);
+}
+
+.primario:hover {
+  background: #f2e2ba;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgb(235 214 164 / 34%);
+}
+
+.vazado {
+  background: transparent;
+  color: var(--ouro-claro);
+  border: 1px solid var(--ouro-escuro);
+}
+
+.vazado:hover {
+  border-color: var(--ouro-claro);
+  transform: translateY(-2px);
+}
+
+.pendente {
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta:hover {
+    transform: none;
+  }
+}

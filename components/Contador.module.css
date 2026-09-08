@@ -1,0 +1,73 @@
+.contador {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-4) var(--e-6);
+  background: rgb(93 15 18 / 78%);
+  border: 1px solid rgb(155 124 79 / 50%);
+  backdrop-filter: blur(6px);
+}
+
+.titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3);
+}
+
+.lote {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 0.68rem;
+  color: var(--branco);
+  background: var(--verde);
+  padding: 4px var(--e-3);
+  white-space: nowrap;
+}
+
+.chamada {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.relogio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--e-2);
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--e-2) var(--e-1);
+  min-width: 3.4rem;
+  background: rgb(0 0 0 / 28%);
+  border: 1px solid rgb(235 214 164 / 26%);
+}
+
+.numero {
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: clamp(1.5rem, 3.4vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ouro-claro);
+  /* Largura estável: sem isso o relógio treme a cada segundo. */
+  font-variant-numeric: tabular-nums;
+}
+
+.rotulo {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.56rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}

@@ -1,0 +1,103 @@
+.secao {
+  background: var(--vinho-fundo);
+  padding-block: var(--e-secao);
+}
+
+.cabecalho {
+  text-align: center;
+}
+
+.titulo {
+  font-size: var(--t-h2);
+  max-width: 24ch;
+  margin-inline: auto;
+  color: var(--branco);
+}
+
+/* --- A fila de pratos --- */
+
+.trilho {
+  display: flex;
+  gap: var(--e-6);
+  list-style: none;
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+
+  /* O primeiro card alinha com o texto acima; a fila sangra até a borda
+     direita, deixando o próximo card à mostra. É essa espiada que avisa
+     que a fila continua. */
+  padding-inline: max(
+      clamp(1.25rem, 5vw, 3rem),
+      calc((100vw - 1200px) / 2 + 3rem)
+    )
+    clamp(1.25rem, 5vw, 3rem);
+  scroll-padding-inline-start: max(
+    clamp(1.25rem, 5vw, 3rem),
+    calc((100vw - 1200px) / 2 + 3rem)
+  );
+  padding-bottom: var(--e-6);
+
+  /* A barra nativa é overlay no macOS e some quando ninguém rola — quem
+     avisa que a fila continua é a barra desenhada em MenuControles. */
+  scrollbar-width: none;
+}
+
+.trilho::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 clamp(15.5rem, 24vw, 21rem);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: var(--vinho);
+  border: 1px solid var(--separador);
+  overflow: hidden;
+}
+
+/* 4:3, acompanhando as fotos entregues. Cortar para 3:4 tiraria 44% da
+   largura e destruiria composições largas como a mesa de antepastos. */
+.foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--separador);
+}
+
+.corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  padding: var(--e-6);
+}
+
+.ordem {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ouro-claro);
+}
+
+.nome {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--branco);
+}
+
+.descricao {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 61.99rem) {
+  /* No toque o card ocupa quase a tela, deixando a espiada do próximo. */
+  .card {
+    flex-basis: min(78vw, 20rem);
+  }
+}

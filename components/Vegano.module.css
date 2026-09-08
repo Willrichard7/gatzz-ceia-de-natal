@@ -1,0 +1,51 @@
+.cards {
+  display: grid;
+  gap: var(--e-8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--claro-superficie);
+  /* Sobre creme o separador claro do resto da página sumiria. */
+  border: 1px solid rgb(74 47 44 / 14%);
+  box-shadow: 0 10px 30px rgb(74 47 44 / 10%);
+  overflow: hidden;
+}
+
+.foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid rgb(74 47 44 / 14%);
+}
+
+.corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-8) var(--e-6);
+}
+
+.nome {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  color: var(--vinho); /* 11,3:1 sobre branco */
+}
+
+.descricao {
+  color: var(--texto-escuro); /* 12,1:1 sobre branco */
+  font-size: 1.05rem;
+  max-width: 32ch;
+}

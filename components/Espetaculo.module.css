@@ -1,0 +1,8 @@
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+.slot {
+  width: min(100%, 60rem);
+}

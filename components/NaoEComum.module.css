@@ -1,0 +1,33 @@
+/* Faixa de largura total — sem container, encosta nas duas bordas. */
+.montagem {
+  width: 100%;
+  background: var(--vinho-fundo);
+  border-block: 1px solid var(--separador);
+}
+
+.montagemFoto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  /* Em tela estreita, 21:9 daria uma tira de 167px de altura. O min-height
+     força a caixa a crescer e o `cover` recorta para o centro. */
+  min-height: min(72vh, 620px);
+}
+
+/* Espaço do vídeo vertical. É ele que dá altura à seção. */
+.video {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(1rem, 4vw, 2.5rem);
+}
+
+.videoSlot {
+  /* 9:16 numa largura contida: em tela cheia o vertical viraria uma
+     coluna de 1.400px de altura e engoliria a seção inteira. */
+  width: min(100%, 22rem);
+  border: 1px solid var(--separador);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 40%);
+  overflow: hidden;
+}

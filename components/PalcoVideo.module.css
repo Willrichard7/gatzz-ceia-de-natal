@@ -1,0 +1,9 @@
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Reserva a caixa antes do arquivo chegar: sem salto de layout. */
+  aspect-ratio: 720 / 900;
+  object-fit: cover;
+  background: var(--vinho-fundo);
+}

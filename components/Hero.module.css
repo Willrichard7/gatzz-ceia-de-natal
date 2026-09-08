@@ -1,0 +1,223 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 7vw, 5rem);
+}
+
+/* Veludo de cortina: bandas verticais + vinheta quente de luz de palco.
+   Zero bytes, disponível no primeiro paint. */
+.cortina {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgb(0 0 0 / 34%) 0 2px,
+      rgb(0 0 0 / 10%) 2px 1.6%,
+      rgb(255 255 255 / 5%) 3%,
+      rgb(0 0 0 / 30%) 5.2%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 50% 0%,
+      #a01a22 0%,
+      var(--vinho) 42%,
+      #4a0c0f 100%
+    );
+}
+
+.grao {
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.conteudo {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 62rem) {
+  .conteudo {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-6);
+  text-align: center;
+}
+
+/* O grupo do título: largura travada na do lettering, para que logo e
+   "em Gramado" centralizem no mesmo eixo dele. A borda esquerda do grupo
+   continua alinhada ao parágrafo abaixo. */
+.lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-6);
+  width: min(100%, 24rem);
+}
+
+.logo {
+  width: clamp(11rem, 26vw, 15rem);
+  height: auto;
+  color: var(--ouro-claro);
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-3);
+  margin: 0;
+  width: 100%;
+}
+
+.sub {
+  margin-inline: auto;
+}
+
+.lettering {
+  width: 100%;
+  height: auto;
+  color: var(--branco);
+  filter: drop-shadow(0 6px 24px rgb(0 0 0 / 45%));
+}
+
+.local {
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
+  font-weight: 600;
+  color: var(--ouro-claro);
+  /* Compensa o espaço que o tracking adiciona depois da última letra —
+     sem isso o texto centralizado assenta deslocado para a esquerda. */
+  padding-left: 0.34em;
+}
+
+/* A frase de destaque: agora fecha o bloco em vez de abri-lo, e é o
+   maior texto do hero depois do próprio lockup. */
+.assinatura {
+  font-family: var(--fonte-display), Georgia, serif;
+  font-size: clamp(1.75rem, 4.4vw, 2.9rem);
+  font-style: italic;
+  color: var(--ouro-claro);
+  line-height: 1.15;
+  max-width: 20ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+/* O nome da campanha não pode quebrar ao meio: "Show de / Natal" some
+   com a assinatura justamente na linha que deveria destacá-la. */
+.semQuebra {
+  white-space: nowrap;
+}
+
+.sub {
+  max-width: 38ch;
+  color: var(--texto-suave);
+  font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+  /* 600 é um dos pesos já carregados da Montserrat — não custa requisição
+     nova. */
+  font-weight: 600;
+}
+
+.dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-4);
+  list-style: none;
+  margin: 0;
+  padding: var(--e-3) var(--e-6);
+  background: rgb(93 15 18 / 55%);
+  /* Moldura no gradiente oficial. border-image não aceita raio — o que
+     combina com o vocabulário déco, que é de canto vivo. */
+  border: 1px solid transparent;
+  border-image: var(--ouro-gradiente) 1;
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--branco);
+}
+
+.dados li + li {
+  padding-left: var(--e-4);
+  border-left: 1px solid var(--separador);
+}
+
+/* Em tela estreita os três itens não cabem em uma linha, e a quebra deixava
+   um traço separador órfão abrindo a segunda linha. Empilhado fica limpo. */
+@media (max-width: 30rem) {
+  .dados {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dados li + li {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-4);
+  margin-top: var(--e-2);
+}
+
+/* --- Palco: o vídeo vertical tratado como cartaz de teatro --- */
+
+.palco {
+  position: relative;
+  width: min(100%, 26rem);
+  margin-inline: auto;
+}
+
+.moldura {
+  position: relative;
+  border: 1px solid rgb(235 214 164 / 55%);
+  padding: var(--e-2);
+  background: rgb(93 15 18 / 55%);
+  box-shadow: 0 30px 70px rgb(0 0 0 / 45%);
+}
+
+.moldura video {
+  aspect-ratio: 4 / 5;
+}
+
+.moldura::after {
+  content: "";
+  position: absolute;
+  inset: var(--e-2);
+  border: 1px solid rgb(235 214 164 / 22%);
+  pointer-events: none;
+}
+
+.oferta {
+  --bilhete-fundo-externo: var(--vinho);
+  display: flex;
+  justify-content: center;
+  margin-top: calc(var(--e-12) * -1);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 62rem) {
+  .oferta {
+    justify-content: flex-end;
+    margin-right: calc(var(--e-8) * -1);
+  }
+}

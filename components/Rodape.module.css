@@ -1,0 +1,25 @@
+.rodape {
+  background: #3d0a0d;
+  padding-block: var(--e-24);
+  border-top: 1px solid var(--separador);
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-8);
+  text-align: center;
+}
+
+.logo {
+  width: clamp(11rem, 26vw, 15rem);
+  height: auto;
+  color: var(--ouro-claro);
+}
+
+.cidade {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--branco);
+  letter-spacing: 0.02em;
+}

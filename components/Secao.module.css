@@ -1,0 +1,70 @@
+.secao {
+  padding-block: var(--e-secao);
+}
+
+.vinho {
+  background: var(--vinho);
+}
+
+.escuro {
+  background: var(--vinho-fundo);
+}
+
+.vermelho {
+  background: var(--vermelho);
+}
+
+/* Seção clara: os papéis de texto invertem. */
+.claro {
+  background: var(--claro-fundo);
+  --texto-suave: var(--texto-escuro);
+}
+
+.claro .titulo {
+  color: var(--vinho); /* 11,3:1 sobre o creme */
+}
+
+.claro :global(.olho) {
+  color: var(--vermelho); /* 6,6:1 — o dourado seria invisível aqui */
+}
+
+.largo {
+  max-width: 1360px;
+}
+
+.titulo {
+  margin-top: var(--e-4);
+  font-size: var(--t-h2);
+  max-width: 20ch;
+  color: var(--branco);
+}
+
+.intro {
+  margin-top: var(--e-6);
+  max-width: 52ch;
+  color: var(--texto-suave);
+}
+
+.corpo {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* Sobre o vermelho #de181f, o cinza-rosado do resto da página cai para
+   4,47:1 e reprova AA por pouco. Redefinir a variável — e não pintar os
+   descendentes — mantém o bilhete, que tem fundo creme e cor própria,
+   fora do alcance desta correção. */
+.vermelho {
+  --texto-suave: rgb(255 255 255 / 92%);
+}
+
+/* Cabeçalho centralizado: o bloco inteiro no eixo da página, texto centrado.
+   `margin-inline: auto` nos filhos porque eles têm max-width próprio — sem
+   isso o texto centraliza mas a caixa continua encostada à esquerda. */
+.centralizado {
+  text-align: center;
+}
+
+.centralizado .titulo,
+.centralizado .intro {
+  margin-inline: auto;
+}
