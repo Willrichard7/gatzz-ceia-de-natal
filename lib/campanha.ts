@@ -15,7 +15,7 @@ export const CAMPANHA = {
 
   preco: {
     de: 1598,
-    por: 898,
+    por: 998,
     unidade: "por pessoa",
     parcelas: 10,
   },

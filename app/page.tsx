@@ -7,6 +7,7 @@ import Vegano from "@/components/Vegano";
 import AnoNovo from "@/components/AnoNovo";
 import Inclusos from "@/components/Inclusos";
 import Espetaculo from "@/components/Espetaculo";
+import ACasa from "@/components/ACasa";
 import Convite from "@/components/Convite";
 import Faq, { PERGUNTAS } from "@/components/Faq";
 import CtaFinal from "@/components/CtaFinal";
@@ -96,6 +97,7 @@ export default function Pagina() {
         <AnoNovo />
         <Inclusos />
         <Espetaculo />
+        <ACasa />
         <Convite />
         <Faq />
         <CtaFinal />
