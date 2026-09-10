@@ -19,8 +19,11 @@ import s from "./ACasa.module.css";
  */
 export default function ACasaTrilho({
   children,
+  fundo,
 }: {
   children: React.ReactNode;
+  /** URL já otimizada da imagem de fundo do palco. */
+  fundo?: string;
 }) {
   const secao = useRef<HTMLDivElement>(null);
   const trilho = useRef<HTMLDivElement>(null);
@@ -97,7 +100,14 @@ export default function ACasaTrilho({
 
   return (
     <div ref={secao} className={s.secao} data-modo={modo}>
-      <div className={s.palco}>
+      <div
+        className={s.palco}
+        style={
+          fundo
+            ? ({ "--fundo": `url("${fundo}")` } as React.CSSProperties)
+            : undefined
+        }
+      >
         <div ref={trilho} className={s.trilho}>
           {children}
         </div>

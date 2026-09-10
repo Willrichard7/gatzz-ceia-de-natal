@@ -13,12 +13,16 @@ type Props = {
 };
 
 /**
- * Vídeo decorativo que só baixa quando chega perto da tela.
+ * Vídeo decorativo: só baixa perto da tela, e só toca enquanto visível.
  *
- * O arquivo tem alguns megabytes e vive no meio da página. Deixar o
- * navegador buscá-lo no carregamento cobraria esse peso de todo mundo,
- * inclusive de quem nunca rola até aqui. O pôster pinta o quadro na hora;
- * o vídeo entra depois, quando o IntersectionObserver avisa que faz sentido.
+ * O arquivo só é buscado quando o vídeo se aproxima da viewport — quem nunca
+ * rola até ele não paga o download. Depois disso ele pausa ao sair da tela
+ * e retoma ao voltar: com vários vídeos na página (a casa tem quatro lado a
+ * lado), deixá-los todos rodando seria decodificação em paralelo à toa —
+ * bateria e aquecimento no celular.
+ *
+ * O IntersectionObserver usa a caixa renderizada, com transform incluído,
+ * então funciona também no trilho horizontal da seção da casa.
  *
  * `prefers-reduced-motion` encerra o assunto: fica só o pôster.
  */
@@ -30,22 +34,29 @@ export default function VideoAmbiente({
   descricao,
 }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
+  const carregado = useRef(false);
   const [carregar, setCarregar] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const observador = new IntersectionObserver(
       (entradas) => {
-        if (entradas.some((e) => e.isIntersecting)) {
-          setCarregar(true);
-          observador.disconnect();
+        const visivel = entradas.some((e) => e.isIntersecting);
+        if (!visivel) {
+          el.pause();
+          return;
+        }
+        if (!carregado.current) {
+          carregado.current = true;
+          setCarregar(true); // o <source> entra e o efeito abaixo dá o play
+        } else {
+          void el.play().catch(() => {});
         }
       },
-      { rootMargin: "300px" }
+      { rootMargin: "200px" }
     );
 
     observador.observe(el);

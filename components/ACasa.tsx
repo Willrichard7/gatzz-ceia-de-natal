@@ -1,4 +1,7 @@
+import { getImageProps } from "next/image";
 import ACasaTrilho from "./ACasaTrilho";
+import VideoAmbiente from "./VideoAmbiente";
+import fundo from "@/public/fotos/casa-fundo.jpg";
 import s from "./ACasa.module.css";
 
 /**
@@ -6,10 +9,10 @@ import s from "./ACasa.module.css";
  *
  * O foco é o GLAMOUR, não o nome — o convidado precisa sentir a casa antes
  * de ver o preço. A ordem dos quadros é a ordem de uma noite real: a porta,
- * o salão, a cena, a gastronomia. Abre e fecha com texto, para o
- * percurso ter tese e conclusão em vez de virar álbum.
+ * o salão, a cena, a gastronomia. Abre e fecha com texto, para o percurso
+ * ter tese e conclusão em vez de virar álbum.
  *
- * Vocabulário conforme o DNA: convidado, anfitrião, noite, cena, brinde.
+ * Vocabulário conforme o DNA: convidado, anfitrião, noite, cena.
  * A construção "a mesa é palco" está vetada até segunda ordem.
  */
 const QUADROS = [
@@ -17,41 +20,53 @@ const QUADROS = [
     olho: "A chegada",
     texto:
       "As portas se abrem e a noite começa. A luz baixa, o dourado e a elegância das grandes celebrações recebem você.",
-    arquivo: "casa-1-chegada.jpg",
-    pauta:
-      "Fachada ou hall de entrada à noite, luz quente, detalhe Art Déco em evidência.",
+    video: "casa-1-chegada",
+    descricao:
+      "Fachada do GATZZ à noite: letreiro Art Déco dourado com esculturas de bailarinas e luzes de marquise.",
   },
   {
     olho: "O salão",
     texto:
       "O palco faz parte do ambiente e o ambiente faz parte do espetáculo. Um espetáculo de Arte e Gastronomia diante dos seus olhos e da sua mesa.",
-    arquivo: "casa-2-salao.jpg",
-    pauta:
-      "Salão cheio visto de um ponto alto, com a casa ocupada e o palco ao fundo.",
+    video: "casa-2-salao",
+    descricao:
+      "O salão do GATZZ visto do alto: mesas ao redor do palco central, sob luz violeta e cortinas de cristais.",
   },
   {
     olho: "A cena",
     texto:
       "Elenco, figurino e música ao vivo acontecem a poucos metros da sua mesa. Cada ato aproxima o convidado da história.",
-    arquivo: "casa-3-cena.jpg",
-    pauta:
-      "Elenco em performance, figurino em destaque, luz de espetáculo.",
+    video: "casa-3-cena",
+    descricao:
+      "O Papai Noel em cena no palco do GATZZ, com a plateia em silhueta à frente.",
   },
   {
     olho: "A gastronomia",
     texto:
       "Os pratos chegam no ritmo do espetáculo. Aqui, o sabor não acompanha a noite: ajuda a contar a história.",
-    arquivo: "casa-4-gastronomia.jpg",
-    pauta:
-      "Réchaud de fondue em serviço ou prato sendo finalizado, com o salão desfocado atrás.",
+    video: "casa-4-gastronomia",
+    descricao:
+      "Prato de bacalhau servido diante da árvore de Natal iluminada e de presentes embrulhados.",
   },
 ];
 
 export default function ACasa() {
+  /* O fundo entra por CSS (precisa ficar parado atrás do trilho que desliza),
+     mas a URL vem do otimizador: o navegador recebe AVIF, não o JPEG cru. */
+  const {
+    props: { src: fundoOtimizado },
+  } = getImageProps({
+    src: fundo,
+    alt: "",
+    width: 1920,
+    height: 1080,
+    quality: 70,
+  });
+
   return (
     <section id="a-casa" aria-label="A casa">
-      <ACasaTrilho>
-        <div className={`${s.quadro} ${s.abertura}`}>
+      <ACasaTrilho fundo={fundoOtimizado}>
+        <div className={`${s.quadro} ${s.placa} ${s.abertura}`}>
           <p className="olho">GATZZ Fondue &amp; Show</p>
           <h2 className={`display ${s.titulo}`}>
             A casa mais glamourosa de Gramado recebe o Natal.
@@ -66,17 +81,15 @@ export default function ACasa() {
         </div>
 
         {QUADROS.map((q) => (
-          <figure key={q.arquivo} className={s.quadro}>
-            {/* TODO(assets): trocar por next/image com import estático e
-                `sizes="(min-width: 62rem) 22rem, 78vw"`. */}
-            <div
-              className={s.pendente}
-              role="img"
-              aria-label={`Espaço reservado para foto: ${q.pauta}`}
-            >
-              <span className={s.selo}>Foto pendente</span>
-              <span className={s.arquivo}>{q.arquivo}</span>
-              <span className={s.pauta}>{q.pauta}</span>
+          <figure key={q.video} className={`${s.quadro} ${s.card}`}>
+            <div className={s.midia}>
+              <VideoAmbiente
+                src={`/video/${q.video}.mp4`}
+                poster={`/video/${q.video}-poster.jpg`}
+                width={720}
+                height={960}
+                descricao={q.descricao}
+              />
             </div>
             <figcaption className={s.legenda}>
               <p className="olho">{q.olho}</p>
@@ -85,7 +98,7 @@ export default function ACasa() {
           </figure>
         ))}
 
-        <div className={`${s.quadro} ${s.fecho}`}>
+        <div className={`${s.quadro} ${s.placa} ${s.fecho}`}>
           <p className={`display ${s.fechoTexto}`}>
             Gramado tem ceias. Gramado tem espetáculos.
             <strong> O GATZZ tem os dois.</strong>
