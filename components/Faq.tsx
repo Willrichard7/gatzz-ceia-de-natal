@@ -3,44 +3,44 @@ import s from "./Faq.module.css";
 
 export const PERGUNTAS = [
   {
-    p: "É só um jantar ou tem espetáculo de verdade?",
-    r: "Tem espetáculo de verdade. Simplesmente Natal é uma montagem com elenco, figurino e música, apresentada à sua frente e intercalada com os tempos do jantar. O GATZZ é uma casa de fondue e show — o espetáculo é parte do produto, não música ambiente.",
+    p: "É apenas uma ceia ou há um espetáculo completo?",
+    r: "Há um espetáculo completo. Simplesmente Natal reúne elenco, figurino e música ao vivo e acontece diante do público, intercalado com os cinco tempos do menu. No GATZZ, o espetáculo não é ambientação: é parte central da noite.",
   },
   {
-    p: "É indicado para crianças?",
-    r: "Sim. A classificação é livre, para todas as idades, e o Papai Noel faz a entrega dos presentes durante a celebração. A experiência foi construída para prender adultos e crianças ao mesmo tempo.",
+    p: "A experiência é indicada para crianças?",
+    r: "Sim. A classificação é livre e a noite foi criada para envolver adultos e crianças. A entrega de presentes pelo Papai Noel acontece durante a celebração.",
   },
   {
     p: "Como funciona a entrega de presentes pelo Papai Noel?",
-    r: "Os responsáveis que quiserem devem levar os presentes ao GATZZ no período da tarde do dia 24. Durante a celebração, o Papai Noel entra em cena e faz a entrega.",
+    r: "Os responsáveis devem levar os presentes ao GATZZ durante a tarde do dia 24. Durante a celebração, o Papai Noel entra em cena e faz a entrega.",
   },
   {
     p: "O que está incluso no valor?",
-    r: "Menu completo em cinco tempos, mesa de antepastos natalinos, seleção de espumantes da Serra Gaúcha, refrigerantes da linha Coca-Cola, águas, o espetáculo Simplesmente Natal e a entrega de presentes pelo Papai Noel.",
+    r: "Mesa de antepastos natalinos, menu completo em cinco tempos, espumantes da Serra Gaúcha, refrigerantes da linha Coca-Cola, águas, o espetáculo Simplesmente Natal e a entrega de presentes pelo Papai Noel.",
   },
   {
-    p: "Qual o horário e quanto dura?",
-    r: "As portas abrem às 20h, com tolerância de 30 minutos, e a noite se encerra à meia-noite.",
+    p: "Qual é o horário e quanto tempo dura?",
+    r: "As portas abrem às 20h, com tolerância de 30 minutos. A experiência se encerra à meia-noite.",
   },
   {
-    p: "Como funciona a reserva?",
-    r: "A reserva é feita pelo WhatsApp da casa, e a compra deve ser realizada com no mínimo 2 horas de antecedência em relação ao horário da reserva.",
+    p: "Como faço a reserva?",
+    r: "A reserva é feita pelo WhatsApp da casa. A compra deve ser concluída com pelo menos duas horas de antecedência em relação ao horário da reserva.",
   },
   {
     p: "Posso trocar de mesa depois de reservar?",
-    r: "Não. Uma vez confirmada, não é possível realizar a realocação de mesa.",
+    r: "Não. Após a confirmação da reserva, não é possível mudar a mesa escolhida.",
   },
   {
-    p: "Tem estacionamento?",
-    r: "Sim. Mas bons drinks vão bem com uma dose extra de despreocupação: para aproveitar ao máximo, deixe o carro na garagem e pegue carona. É melhor não dirigir depois do espetáculo — você vai sair embriagado de emoção.",
+    p: "O GATZZ tem estacionamento?",
+    r: "Sim. Se você pretende consumir bebidas alcoólicas, prefira táxi ou transporte por aplicativo para aproveitar a noite com tranquilidade.",
   },
   {
     p: "O espaço é acessível?",
-    r: "Sim, a casa é acessível. Se houver alguma necessidade específica, avise no momento da reserva para que a equipe prepare a melhor acomodação.",
+    r: "Sim. Se houver alguma necessidade específica, informe a equipe no momento da reserva para que a casa prepare a melhor acomodação.",
   },
   {
     p: "O valor muda?",
-    r: "Sim, a campanha funciona em lotes e o valor sobe a cada virada. O valor desta página é o do 2º lote e vale até 30 de setembro.",
+    r: "Sim. As vendas acontecem por lotes e o valor aumenta a cada virada. O preço desta página corresponde ao 2º lote e é válido até 30 de setembro.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function Faq() {
       id="duvidas"
       tom="escuro"
       olho="Antes de reservar"
-      titulo={<>As perguntas que todo mundo faz.</>}
+      titulo={<>Tudo o que você precisa saber para a noite.</>}
     >
       <div className={s.lista}>
         {PERGUNTAS.map((item) => (

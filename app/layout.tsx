@@ -48,18 +48,18 @@ const SITE = "https://ceiadenatal.gatzz.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: "Ceia de Natal em Gramado | Um Show de Natal no GATZZ",
+  title: "Ceia de Natal em Gramado 2026 | GATZZ Fondue & Show",
   description:
-    "Viva uma Ceia de Natal em Gramado com fondue, magia e espetáculo ao vivo. Garanta sua mesa para Um Show de Natal no GATZZ.",
+    "Reserve sua mesa para uma ceia em cinco tempos com espetáculo ao vivo e entrega de presentes pelo Papai Noel. Dia 24 de dezembro, no GATZZ.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: SITE,
     siteName: "GATZZ Fondue & Show",
-    title: "Ceia de Natal em Gramado | Um Show de Natal no GATZZ",
+    title: "A sua noite de Natal entra em cena | GATZZ",
     description:
-      "Menu em 5 tempos, espumantes da Serra Gaúcha, Papai Noel e o espetáculo Simplesmente Natal. 24 de dezembro, em Gramado.",
+      "Ceia em cinco tempos, espetáculo Simplesmente Natal e entrega de presentes pelo Papai Noel. 24 de dezembro, em Gramado.",
     images: [
       {
         // TODO(assets): OG dedicada da campanha, 1200x630.
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ceia de Natal em Gramado | Um Show de Natal no GATZZ",
+    title: "A sua noite de Natal entra em cena | GATZZ",
     description:
-      "Menu em 5 tempos, espumantes, Papai Noel e espetáculo ao vivo. 24 de dezembro, em Gramado.",
+      "Ceia em cinco tempos, espetáculo Simplesmente Natal e entrega de presentes pelo Papai Noel. 24 de dezembro, em Gramado.",
     images: ["/og-ceia-de-natal.jpg"],
   },
   robots: { index: true, follow: true },

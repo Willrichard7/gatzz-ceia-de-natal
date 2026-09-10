@@ -6,7 +6,7 @@ import s from "./ACasa.module.css";
  *
  * O foco é o GLAMOUR, não o nome — o convidado precisa sentir a casa antes
  * de ver o preço. A ordem dos quadros é a ordem de uma noite real: a porta,
- * o salão, a cena, a gastronomia, o brinde. Abre e fecha com texto, para o
+ * o salão, a cena, a gastronomia. Abre e fecha com texto, para o
  * percurso ter tese e conclusão em vez de virar álbum.
  *
  * Vocabulário conforme o DNA: convidado, anfitrião, noite, cena, brinde.
@@ -16,7 +16,7 @@ const QUADROS = [
   {
     olho: "A chegada",
     texto:
-      "A porta abre e a noite já está acontecendo. Luz baixa, dourado e o brilho da alta sociedade dos anos 20.",
+      "As portas se abrem e a noite começa. A luz baixa, o dourado e a elegância das grandes celebrações recebem você.",
     arquivo: "casa-1-chegada.jpg",
     pauta:
       "Fachada ou hall de entrada à noite, luz quente, detalhe Art Déco em evidência.",
@@ -24,7 +24,7 @@ const QUADROS = [
   {
     olho: "O salão",
     texto:
-      "Veludo, geometria e ouro velho. Cada assento foi pensado para ver a cena — aqui não existe lugar ruim.",
+      "O palco faz parte do ambiente e o ambiente faz parte do espetáculo. Um espetáculo de Arte e Gastronomia diante dos seus olhos e da sua mesa.",
     arquivo: "casa-2-salao.jpg",
     pauta:
       "Salão cheio visto de um ponto alto, com a casa ocupada e o palco ao fundo.",
@@ -32,7 +32,7 @@ const QUADROS = [
   {
     olho: "A cena",
     texto:
-      "Elenco, figurino e música ao vivo a poucos metros. Pelo eixo do jazz, nenhuma noite se repete igual.",
+      "Elenco, figurino e música ao vivo acontecem a poucos metros da sua mesa. Cada ato aproxima o convidado da história.",
     arquivo: "casa-3-cena.jpg",
     pauta:
       "Elenco em performance, figurino em destaque, luz de espetáculo.",
@@ -40,17 +40,10 @@ const QUADROS = [
   {
     olho: "A gastronomia",
     texto:
-      "Fondue e alta gastronomia servidos no ritmo do espetáculo. O sabor nunca é coadjuvante.",
+      "Os pratos chegam no ritmo do espetáculo. Aqui, o sabor não acompanha a noite: ajuda a contar a história.",
     arquivo: "casa-4-gastronomia.jpg",
     pauta:
       "Réchaud de fondue em serviço ou prato sendo finalizado, com o salão desfocado atrás.",
-  },
-  {
-    olho: "O brinde",
-    texto:
-      "Um brinde à vida, à música e às histórias que aquecem o coração. É assim que a casa recebe.",
-    arquivo: "casa-5-brinde.jpg",
-    pauta: "Taças erguidas por convidados, sorrisos, luz de celebração.",
   },
 ];
 
@@ -59,14 +52,13 @@ export default function ACasa() {
     <section id="a-casa" aria-label="A casa">
       <ACasaTrilho>
         <div className={`${s.quadro} ${s.abertura}`}>
-          <p className="olho">A casa</p>
+          <p className="olho">GATZZ Fondue &amp; Show</p>
           <h2 className={`display ${s.titulo}`}>
-            O glamour dos anos 20, vivido hoje.
+            A casa mais glamourosa de Gramado recebe o Natal.
           </h2>
           <p className={s.intro}>
-            Art Déco na arquitetura, veludo, luz baixa e trilha ao vivo. Aqui
-            ninguém é cliente — é convidado. E a noite começa no instante em
-            que a porta abre.
+            No GATZZ, você não chega apenas para jantar. Você é nosso convidado
+            para celebrar uma noite pensada para você.
           </p>
           <p className={s.dica} aria-hidden="true">
             Continue rolando para percorrer a casa
@@ -95,8 +87,8 @@ export default function ACasa() {
 
         <div className={`${s.quadro} ${s.fecho}`}>
           <p className={`display ${s.fechoTexto}`}>
-            Gramado tem fondues. Gramado tem espetáculos.
-            <strong> O GATZZ tem os dois na mesma noite.</strong>
+            Gramado tem ceias. Gramado tem espetáculos.
+            <strong> O GATZZ tem os dois.</strong>
           </p>
         </div>
       </ACasaTrilho>

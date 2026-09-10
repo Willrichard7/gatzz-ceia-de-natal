@@ -24,11 +24,12 @@ export default function NaoEComum() {
       <Secao
         tom="escuro"
         centralizado
-        titulo={<>Essa, é uma noite de Natal inesquecível em Gramado!</>}
+        titulo={<>Mais do que uma ceia. Uma história para contar.</>}
         intro={
           <>
-            Viver a magia do natal na cidade mais natalina do Brasil é uma
-            experiência única.
+            Em Gramado, a data mais esperada do ano ganha o palco do GATZZ. No
+            GATZZ, um espetáculo de arte e gastronomia com vista privilegiada
+            da sua mesa.
           </>
         }
       >

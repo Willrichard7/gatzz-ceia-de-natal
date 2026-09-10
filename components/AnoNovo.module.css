@@ -70,3 +70,10 @@
   cursor: not-allowed;
   opacity: 0.7;
 }
+
+.texto {
+  /* O gap do bloco é generoso; o texto de apoio encosta no título. */
+  margin-top: calc(var(--e-6) * -1);
+  max-width: 44ch;
+  color: var(--texto-escuro); /* 12:1 sobre o creme */
+}

@@ -30,7 +30,15 @@ export default function Bilhete({
 
       <div className={s.corpo}>
         <p className={s.de}>
-          De <s>{precoFormatado(preco.de)}</s> por
+          De{" "}
+          <s>
+            {preco.de.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+              maximumFractionDigits: 0,
+            })}
+          </s>{" "}
+          por
         </p>
         <p className={s.por}>
           <span className={s.cifrao}>R$</span>

@@ -55,7 +55,7 @@ export default function Vegano() {
       tom="claro"
       largo
       centralizado
-      titulo={<>Menu Vegano.</>}
+      titulo={<>Uma noite completa também para quem escolhe o menu vegano.</>}
       intro="O mesmo espetáculo e com menu inclusivo para todos terem um Show de Natal."
     >
       <ul className={s.cards}>

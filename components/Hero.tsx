@@ -38,26 +38,26 @@ export default function Hero() {
             <LogoGatzz className={s.logo} titulo="GATZZ Fondue & Show" />
 
             <h1 className={s.titulo}>
-              {/* O lockup é imagem; o texto real do h1 vive aqui, sem
-                  duplicar o "em Gramado" que já aparece visível abaixo. */}
-              <span className="visualmente-oculto">Ceia de Natal</span>
+              {/* O lockup é imagem; o texto real do h1 vive aqui. */}
+              <span className="visualmente-oculto">Ceia de Natal em Gramado</span>
               <LetteringCeiaDeNatal className={s.lettering} />
-              <span className={s.local}>em Gramado</span>
             </h1>
           </div>
 
-          <p className={s.sub}>
-            Uma noite Com Gastronomia e Espetáculo e a presença do Papai Noel.
-          </p>
+          <p className={s.local}>24 de dezembro • Gramado</p>
 
-          <p className={s.assinatura}>
-            É um <span className={s.semQuebra}>Show de Natal</span> em Gramado!
+          <p className={s.assinatura}>A sua noite de Natal em Gramado.</p>
+
+          <p className={s.sub}>
+            Uma ceia em cinco tempos, espetáculo ao vivo e a entrega de
+            presentes pelo Papai Noel — tudo na mesma noite, no GATZZ.
           </p>
 
           <ul className={s.dados}>
             <li>{ceia.dataExtenso}</li>
-            <li>Entrada às {ceia.entrada}</li>
-            <li>Gramado · RS</li>
+            <li>Portas abertas às {ceia.entrada}</li>
+            <li>Encerramento à meia-noite</li>
+            <li>Gramado • RS</li>
           </ul>
 
           <div className={s.acoes}>

@@ -22,7 +22,7 @@ const TEMPOS: Tempo[] = [
     ordem: "Para começar",
     nome: "Mesa de Antepastos Natalinos",
     descricao:
-      "Uma seleção especial de antepastos preparada para dar início à experiência da noite.",
+      "Uma seleção especial de antepastos preparada para abrir a experiência da noite.",
     foto: antepastos,
     alt: "Mesa de antepastos natalinos: tigelas de azeitonas, conservas, patês, castanhas e frios dispostas sobre a mesa.",
   },
@@ -62,7 +62,7 @@ const TEMPOS: Tempo[] = [
     ordem: "5º Tempo",
     nome: "Trio de Chocolates",
     descricao:
-      "Chocolate belga ao leite com praliné de castanhas, chocolate branco com crumble de baunilha, e fondue de pistache com coulis de amora.",
+      "Chocolate belga ao leite com praliné de castanhas, chocolate branco com crumble de baunilha e fondue de pistache com coulis de amora.",
     foto: chocolates,
     alt: "Garfo de fondue mergulhando um doce em uma panela de cobre, com luzes de Natal desfocadas ao fundo.",
   },
@@ -80,8 +80,12 @@ export default function Menu() {
     <section id="menu" className={s.secao}>
       <div className={`container ${s.cabecalho}`}>
         <h2 className={`display ${s.titulo}`}>
-          Mesa de Antepastos + Menu Cinco Tempos
+          Uma noite inteira de sabor.
         </h2>
+        <p className={s.intro}>
+          A ceia começa com antepastos natalinos e avança por cinco tempos,
+          cada um criado para acompanhar o ritmo do espetáculo.
+        </p>
       </div>
 
       <ul

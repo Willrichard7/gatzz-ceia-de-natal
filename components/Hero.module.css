@@ -221,3 +221,23 @@
     margin-right: calc(var(--e-8) * -1);
   }
 }
+
+/* Quatro informações rápidas: em linha única elas quebravam deixando um
+   separador órfão abrindo a segunda linha. Em grade 2x2 ficam alinhadas. */
+.dados {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: var(--e-2) var(--e-6);
+}
+
+.dados li + li {
+  padding-left: 0;
+  border-left: 0;
+}
+
+@media (max-width: 30rem) {
+  .dados {
+    grid-template-columns: 1fr;
+  }
+}

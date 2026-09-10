@@ -94,3 +94,10 @@
 .acao > * {
   flex: 1;
 }
+
+.microcopy {
+  margin-top: calc(var(--e-3) * -1);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-suave); /* branco 92% sobre o vermelho: ~6:1 */
+}

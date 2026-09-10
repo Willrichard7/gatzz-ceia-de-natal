@@ -42,9 +42,10 @@ export default function Contador({ inicial }: { inicial: Restante }) {
   return (
     <div className={s.contador}>
       <p className={s.titulo}>
-        <span className={s.lote}>{CAMPANHA.lote.numero}º Lote</span>
         <span className={s.chamada}>
-          {restante.encerrado ? "Valor encerrado" : "Este valor termina em"}
+          {restante.encerrado
+            ? `O valor do ${CAMPANHA.lote.numero}º lote foi encerrado`
+            : `O valor do ${CAMPANHA.lote.numero}º lote termina em`}
         </span>
       </p>
 

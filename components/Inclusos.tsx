@@ -4,27 +4,27 @@ import s from "./Inclusos.module.css";
 
 const INCLUSOS = [
   {
-    titulo: "Menu completo em 5 tempos",
-    texto: "Da mesa de antepastos natalinos ao trio de chocolates.",
+    titulo: "Mesa de antepastos + menu em cinco tempos",
+    texto: "Da seleção de abertura ao trio de chocolates.",
   },
   {
     titulo: "Espumantes da Serra Gaúcha",
     texto:
-      "Seleção especial de uma das marcas mais reconhecidas do Rio Grande do Sul, a maior região produtora de vinhos e espumantes do país.",
+      "Uma seleção especial de espumantes produzidos na principal região vitivinícola do país.",
   },
   {
     titulo: "Refrigerantes e águas",
-    texto: "Linha Coca-Cola e águas inclusas durante toda a noite.",
+    texto: "Refrigerantes da linha Coca-Cola e águas durante toda a noite.",
   },
   {
     titulo: "Espetáculo Simplesmente Natal",
     texto:
-      "Uma noite preparada para celebrar toda a magia e a emoção do Natal. Classificação livre.",
+      "Elenco, figurino e música ao vivo em uma montagem para todas as idades.",
   },
   {
     titulo: "Entrega de presentes pelo Papai Noel",
     texto:
-      "Deixe os presentes no GATZZ durante a tarde e o Papai Noel faz a entrega durante a celebração.",
+      "Deixe os presentes com a casa durante a tarde do dia 24. Na celebração, o Papai Noel faz a entrega.",
   },
 ];
 
@@ -32,7 +32,8 @@ export default function Inclusos() {
   return (
     <Secao
       centralizado
-      titulo={<>O que está incluso</>}
+      titulo={<>Tudo o que faz parte do seu convite.</>}
+      intro="Uma única reserva reúne gastronomia, bebidas, espetáculo ao vivo e a entrega de presentes pelo Papai Noel."
     >
       <ul className={s.lista}>
         {INCLUSOS.map((i) => (

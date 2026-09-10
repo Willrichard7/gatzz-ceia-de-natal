@@ -8,7 +8,8 @@ export default function Espetaculo() {
       id="espetaculo"
       tom="escuro"
       centralizado
-      titulo={<>O espetáculo que você vai assistir</>}
+      olho="Conheça Simplesmente Natal."
+      titulo={<>O espetáculo que você vai assistir.</>}
     >
       <div className={s.video}>
         <div className={s.slot}>

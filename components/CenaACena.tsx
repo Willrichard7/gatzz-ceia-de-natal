@@ -6,33 +6,33 @@ import s from "./CenaACena.module.css";
 const TEMPOS = [
   {
     hora: "20h",
-    titulo: "As portas abrem",
+    titulo: "A casa recebe você",
     texto:
-      "Tolerância de 30 minutos. Chegue com folga e use esse tempo para as fotos — o cenário foi construído para isso.",
+      "As portas abrem às 20h, com tolerância de 30 minutos. Chegue com folga para entrar no clima da noite e registrar a chegada.",
   },
   {
     hora: "Abertura",
-    titulo: "Mesa de antepastos natalinos",
+    titulo: "Antepastos natalinos",
     texto:
-      "Uma seleção especial que dá início à experiência, enquanto a casa se acomoda e as luzes baixam.",
+      "Uma seleção especial abre a experiência enquanto os convidados se acomodam e as luzes do salão anunciam o primeiro ato.",
   },
   {
     hora: "A noite",
-    titulo: "Cinco tempos e o espetáculo",
+    titulo: "Menu cinco tempos e espetáculo",
     texto:
-      "Os pratos são servidos intercalados com Simplesmente Natal. O jantar acompanha o espetáculo, não o contrário.",
+      "Os pratos e o espetáculo Simplesmente Natal se alternam ao longo da celebração. Gastronomia e espetáculo dividem a cena do início ao fim.",
   },
   {
     hora: "O encontro",
-    titulo: "O Papai Noel entra em cena",
+    titulo: "Papai Noel",
     texto:
-      "A entrega dos presentes acontece durante a celebração, com as crianças na plateia e os pais com o celular na mão.",
+      "Durante a celebração, o Papai Noel entra em cena para entregar os presentes e viver com as crianças um dos momentos mais esperados da noite.",
   },
   {
     hora: "00h",
-    titulo: "Encerramento",
+    titulo: "O último brinde",
     texto:
-      "A noite termina à meia-noite — e o Natal continua lá fora, em Gramado.",
+      "A cortina se fecha à meia-noite. Do lado de fora, o Natal continua pelas luzes de Gramado.",
   },
 ];
 
@@ -48,10 +48,10 @@ export default function CenaACena() {
         <div className={s.coluna}>
           <p className="olho">A noite, cena a cena</p>
           <h2 className={`display ${s.tituloSecao}`}>
-            Das 20h à meia-noite, sem tempo morto.
+            Da abertura das portas ao último brinde.
           </h2>
           <p className={s.intro}>
-            A ordem da noite, para você já chegar sabendo o que esperar.
+            Veja como a ceia acontece, das 20h à meia-noite.
           </p>
 
           <ol className={s.linha}>

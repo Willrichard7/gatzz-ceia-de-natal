@@ -55,3 +55,20 @@
     transform: translate(-50%, -50%);
   }
 }
+
+/* O botão ganhou rótulo: de círculo passa a pílula com ícone e texto. */
+.play {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-3);
+  width: auto;
+  height: auto;
+  padding: var(--e-4) var(--e-8) var(--e-4) var(--e-6);
+  border-radius: 999px;
+  font-family: var(--fonte-deco), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}

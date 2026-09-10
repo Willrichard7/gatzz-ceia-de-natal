@@ -71,3 +71,7 @@
   font-weight: 600;
   color: var(--texto-suave);
 }
+
+.titulo {
+  justify-content: center;
+}

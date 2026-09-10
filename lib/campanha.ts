@@ -43,7 +43,7 @@ export const CAMPANHA = {
     // TODO(operação): número real. Formato: DDI+DDD+número, só dígitos. Ex.: "5554999999999"
     whatsapp: null as string | null,
     mensagem:
-      "Olá! Quero garantir minha mesa para a Ceia de Natal GATZZ (Lote 2).",
+      "Olá, quero reservar uma mesa para a Ceia de Natal do GATZZ no dia 24 de dezembro. Pode me orientar sobre disponibilidade e escolha da mesa?",
   },
 
   operacional: {

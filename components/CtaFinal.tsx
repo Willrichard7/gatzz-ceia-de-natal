@@ -24,12 +24,12 @@ export default function CtaFinal() {
         <LetteringCeiaDeNatal className={s.marca} />
 
         <h2 className={`display ${s.titulo}`}>
-          A cortina abre em {CAMPANHA.ceia.dataExtenso}.
+          Em {CAMPANHA.ceia.dataExtenso}, a sua família tem lugar nesta cena.
         </h2>
 
         <p className={s.texto}>
-          Sua viagem a Gramado tem poucas noites. Esta é a que você vai contar
-          depois.
+          Gramado tem muitas noites bonitas. Esta foi criada para permanecer na
+          memória.
         </p>
 
         <div className={s.acoes}>

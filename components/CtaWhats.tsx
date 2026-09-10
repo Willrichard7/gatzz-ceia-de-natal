@@ -18,7 +18,7 @@ type Props = {
  * (#9b7c4f) o contraste cai para 2,9:1 e reprova.
  */
 export default function CtaWhats({
-  children = "Garanta minha mesa",
+  children = "Reservar minha mesa",
   variante = "primario",
   rotulo,
 }: Props) {

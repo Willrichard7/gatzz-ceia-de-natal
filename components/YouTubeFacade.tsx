@@ -44,7 +44,7 @@ export default function YouTubeFacade({ id, titulo }: Props) {
       type="button"
       className={s.moldura}
       onClick={() => setTocando(true)}
-      aria-label={`Assistir: ${titulo}`}
+      aria-label={`Assistir ao trailer: ${titulo}`}
     >
       <Image
         src={capa}
@@ -55,9 +55,10 @@ export default function YouTubeFacade({ id, titulo }: Props) {
         placeholder="blur"
       />
       <span className={s.play} aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
           <path d="M8 5v14l11-7z" />
         </svg>
+        Assistir ao trailer
       </span>
     </button>
   );

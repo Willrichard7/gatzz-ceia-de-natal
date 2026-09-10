@@ -17,7 +17,8 @@ export default function Convite() {
       id="convite"
       tom="vermelho"
       centralizado
-      titulo={<>Garanta sua mesa com o valor do 2º lote.</>}
+      titulo={<>Seu convite para 24 de dezembro.</>}
+      intro="Reserve a mesa para viver uma ceia em cinco tempos, com espetáculo ao vivo e a entrega de presentes pelo Papai Noel."
     >
       {/* Bilhete, relógio e botão na mesma largura e no mesmo eixo:
           um bloco só, em vez de três elementos soltos. */}
@@ -37,6 +38,10 @@ export default function Convite() {
         <div className={s.acao}>
           <CtaWhats />
         </div>
+
+        <p className={s.microcopy}>
+          Reserva pelo WhatsApp • mesas sujeitas à disponibilidade
+        </p>
       </div>
     </Secao>
   );

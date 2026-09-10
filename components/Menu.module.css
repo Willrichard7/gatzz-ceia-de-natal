@@ -101,3 +101,9 @@
     flex-basis: min(78vw, 20rem);
   }
 }
+
+.intro {
+  margin: var(--e-6) auto 0;
+  max-width: 52ch;
+  color: var(--texto-suave);
+}

@@ -22,6 +22,8 @@ export default function AnoNovo() {
           Tenha um ano novo espetacular!
         </h2>
 
+        <p className={s.texto}>Conheça também a Ceia de Ano-Novo do GATZZ.</p>
+
         <div className={s.card}>
           <Image
             src={banner}
@@ -34,11 +36,11 @@ export default function AnoNovo() {
 
         {URL_ANO_NOVO ? (
           <Link href={URL_ANO_NOVO} className={s.botao}>
-            Ir para a página
+            Ver a ceia de Ano-Novo
           </Link>
         ) : (
           <span className={s.botao} role="button" aria-disabled="true">
-            Ir para a página
+            Ver a ceia de Ano-Novo
           </span>
         )}
       </div>
