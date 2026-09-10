@@ -66,7 +66,7 @@ export default function ACasa() {
   return (
     <section id="a-casa" aria-label="A casa">
       <ACasaTrilho fundo={fundoOtimizado}>
-        <div className={`${s.quadro} ${s.placa} ${s.abertura}`}>
+        <div className={`${s.quadro} ${s.abertura}`}>
           <p className="olho">GATZZ Fondue &amp; Show</p>
           <h2 className={`display ${s.titulo}`}>
             A casa mais glamourosa de Gramado recebe o Natal.
@@ -98,7 +98,7 @@ export default function ACasa() {
           </figure>
         ))}
 
-        <div className={`${s.quadro} ${s.placa} ${s.fecho}`}>
+        <div className={`${s.quadro} ${s.fecho}`}>
           <p className={`display ${s.fechoTexto}`}>
             Gramado tem ceias. Gramado tem espetáculos.
             <strong> O GATZZ tem os dois.</strong>

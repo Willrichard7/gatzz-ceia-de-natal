@@ -55,9 +55,12 @@
   scroll-snap-align: center;
 }
 
+/* stretch: todos os itens da fila assumem a altura do mais alto. É o que
+   deixa os cards iguais mesmo com legendas de tamanhos diferentes — e os
+   painéis de texto, agora sem caixa, só centralizam o conteúdo nessa altura. */
 .trilho {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   padding-inline: max(
     clamp(1.25rem, 5vw, 3rem),
@@ -71,27 +74,44 @@
   width: min(78vw, 22rem);
 }
 
-/* Placa escura sob todo texto. O trilho passa sobre regiões do fundo que
-   vão do bronze ao champanhe quase branco: sem placa, o texto claro some
-   na metade direita. A 82% de opacidade, mesmo sobre o ponto mais claro,
-   o dourado dos rótulos fica em ~10:1 e o corpo em ~9,9:1. */
-.placa,
-.legenda {
-  background: rgb(24 7 9 / 82%);
-  backdrop-filter: blur(8px);
-}
-
-/* --- Painéis de texto --- */
+/* --- Painéis de texto: só tipografia, em branco --- */
 
 .abertura,
 .fecho {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--e-4);
   width: min(86vw, 30rem);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
+  color: var(--branco);
+  text-shadow: 0 2px 18px rgb(0 0 0 / 45%);
+}
+
+/* Sem caixa, mas não sem proteção. O fecho termina sobre o champanhe
+   quase branco do fundo, onde texto branco puro some. Esta sombra radial
+   esfumada — sem borda, some antes da própria borda — escurece só a região
+   das letras: pelo cálculo, o branco fica em ~8:1 no centro e ~4,8:1 na
+   ponta das linhas mesmo sobre o ponto mais claro. O resto do dourado
+   continua intacto. */
+.abertura::before,
+.fecho::before {
+  content: "";
+  position: absolute;
+  inset: -20% -35%;
+  z-index: -1;
+  background: radial-gradient(
+    closest-side,
+    rgb(24 7 9 / 60%) 0%,
+    rgb(24 7 9 / 42%) 55%,
+    rgb(24 7 9 / 0%) 100%
+  );
+  pointer-events: none;
+}
+
+.abertura :global(.olho) {
+  color: var(--branco);
 }
 
 .titulo {
@@ -100,7 +120,7 @@
 }
 
 .intro {
-  color: var(--texto-suave);
+  color: var(--branco);
   max-width: 34ch;
 }
 
@@ -111,7 +131,7 @@
   letter-spacing: 0.2em;
   font-size: 0.66rem;
   font-weight: 600;
-  color: var(--ouro-claro);
+  color: var(--branco);
 }
 
 .dica::after {
@@ -125,24 +145,29 @@
 .fechoTexto {
   font-size: clamp(1.5rem, 3.4vw, 2.2rem);
   line-height: 1.25;
-  color: var(--texto-suave);
+  color: var(--branco);
 }
 
+/* Todo em branco: a ênfase da última frase passa da cor para o itálico. */
 .fechoTexto strong {
   display: block;
   margin-top: var(--e-3);
   font-weight: 400;
-  color: var(--ouro-claro);
+  font-style: italic;
+  color: var(--branco);
 }
 
 /* --- Cards de vídeo --- */
 
 .card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   box-shadow: 0 24px 60px rgb(0 0 0 / 40%);
 }
 
 .midia {
+  flex: 0 0 auto;
   aspect-ratio: 3 / 4;
   background: var(--vinho-fundo);
 }
@@ -153,11 +178,16 @@
   object-fit: cover;
 }
 
+/* Vinho da marca no lugar do quase-preto. flex: 1 faz a legenda ocupar o
+   que sobrar da altura do card, então os cards fecham todos na mesma linha.
+   Branco sobre #761316 dá 11,3:1; o dourado do rótulo, 7,9:1. */
 .legenda {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: var(--e-2);
   padding: var(--e-4) var(--e-6) var(--e-6);
+  background: var(--vinho);
 }
 
 .legendaTexto {
